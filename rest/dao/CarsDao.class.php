@@ -36,7 +36,7 @@ class CarsDao {
     function addCar($car) {
         $this->query("INSERT INTO cars (manufacturer_id, model_id, category_id, engine_id, year, mileage, price, color, vin, dealer_id, numOfDors, emisions, seats, navigation, aircondition, parkingSensor_front, parkingSensor_rear,driveType_id) 
         VALUES (:manufacturer_id, :model_id, :category_id, :engine_id, :year, :mileage, :price, :color, :vin, :dealer_id, :numOfDors, :emisions, :seats, :navigation, :aircondition, :parkingSensor_front, :parkingSensor_rear, :driveType_id)", $car);
-        $car['id'] = $this->conn->lastInsertId();
+        $car['car_id'] = $this->conn->lastInsertId();
         return $car;
     }
 }
