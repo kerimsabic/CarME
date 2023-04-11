@@ -27,7 +27,7 @@ class BaseDao{
         return $stmt;
     }
 
-    function getAll() {
+    function get_all() {
         $stmt = $this->query("SELECT * FROM " . $this->table_name);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -68,7 +68,7 @@ class BaseDao{
             $query .= $column . "= :" . $column . ", ";
         }
         $query = substr($query, 0, -2);
-        $query .= " WHERE ${id_column} = :id";
+        $query .= " WHERE $id_column = :id";
 
         $stmt = $this->connection->prepare($query);
         $entity['id'] = $id;
