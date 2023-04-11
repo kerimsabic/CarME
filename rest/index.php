@@ -1,5 +1,30 @@
 <?php
 
+require '../vendor/autoload.php';
+
+
+// import and register all business logic files (services) to FlightPHP
+require_once __DIR__ . '/services/CarsServices.php';
+
+
+Flight::register('carsServices', "CarsServices");
+
+
+// import all routes
+require_once __DIR__ . '/routes/CarsRoutes.php';
+
+
+// it is still possible to add custom routes after the imports
+Flight::route('GET /', function () {
+    echo "Hello";
+});
+
+
+Flight::start();
+
+
+
+/*
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS, PATCH');
 
@@ -26,5 +51,6 @@ Flight::route('GET /api/car/@id',function($id){
  
 
  Flight::start();
+ */
 
 ?>
