@@ -8,7 +8,7 @@ Flight::route('GET /api/cars', function () {
 
 
 Flight::route('GET /api/cars/@id', function ($id) {
-    Flight::json(Flight::carsServices()->get_by_id($id));
+    Flight::json(Flight::carsServices()->getById($id));
 });
 
 
@@ -26,7 +26,7 @@ Flight::route('POST /api/cars', function () {
 Flight::route('PUT /api/cars/@id', function ($id) {
     $data = Flight::request()->data->getData();
     Flight::carsServices()->update($id, $data);
-    Flight::json(Flight::carsServices()->get_by_id($id));
+    Flight::json(Flight::carsServices()->getById($id));
 });
 
 

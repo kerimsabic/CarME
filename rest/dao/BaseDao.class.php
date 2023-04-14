@@ -33,7 +33,7 @@ class BaseDao{
     }
 
     function getById($id) {
-        $stmt = $this->query("SELECT * FROM " . $this->table_name . " WHERE id = :id", ["car_id" => $id]);
+        $stmt = $this->query("SELECT * FROM " . $this->table_name . " WHERE id = :id", ["id" => $id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
