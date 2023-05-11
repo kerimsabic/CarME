@@ -1,7 +1,7 @@
 <?php
 
 require_once 'BaseServices.php';
-require_once __DIR__ . "/../dao/ManufacureModelsDao.class.php";
+require_once __DIR__ . "/../dao/ManufactureModelsDao.class.php";
 
 class ManufactureModelsServices extends BaseServices {
 
